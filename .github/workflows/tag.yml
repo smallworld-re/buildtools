@@ -1,4 +1,4 @@
-name: Toolchains
+name: Release
 on:
   push:
     tags:
@@ -13,12 +13,12 @@ jobs:
       - name: Build LoongArch64 Toolchain
         id: build-loongarch64
         run: |
-          GLIBC_EXTRA_ARGS=--disable-default-pie ./toolchains/compile_gcc.sh loongarch64-linux-gnu "/usr" "$PWD/toolchains/buildtools-loongarch64-linux-gnu"
+          GLIBC_EXTRA_ARGS=--disable-default-pie ./compile_gcc.sh loongarch64-linux-gnu "/usr" "$PWD/buildtools-loongarch64-linux-gnu"
 
       - name: Build LoongArch64 Deb
         id: build-loongarch64-deb
         run: |
-          dpkg --build toolchains/buildtools-loongarch64-linux-gnu
+          dpkg --build ./buildtools-loongarch64-linux-gnu
 
       - name: Test LoongArch64 Deb
         run: |
