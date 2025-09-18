@@ -40,7 +40,7 @@ fi
 # GLIBC_EXTRA_ARGS
 
 # Install odd dependencies
-apt-get -y install build-essential bison flex libgmp3-dev libmpc-dev libmpfr-dev texinfo libisl-dev rsync gawk
+apt-get -y install build-essential bison flex libgmp3-dev libmpc-dev libmpfr-dev texinfo libisl-dev rsync gawk || exit 1
 
 # Clone all the repos.
 if [[ ! -d "$BINUTILS_SRC" ]]; then

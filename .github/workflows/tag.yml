@@ -6,7 +6,7 @@ on:
 
 jobs:
   Release:
-    runs-on: ubuntu-22.04
+    runs-on: smallworld-arc
     steps:
       - uses: actions/checkout@v3
 
